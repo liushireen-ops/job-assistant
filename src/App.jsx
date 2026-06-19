@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { AppProvider } from './context/AppContext';
@@ -13,7 +13,7 @@ export default function App() {
   return (
     <ConfigProvider locale={zhCN}>
       <AppProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Layout>
             <Routes>
               <Route path="/" element={<HomePage />} />
@@ -22,7 +22,7 @@ export default function App() {
               <Route path="/settings" element={<SettingsPage />} />
             </Routes>
           </Layout>
-        </BrowserRouter>
+        </HashRouter>
       </AppProvider>
     </ConfigProvider>
   );
